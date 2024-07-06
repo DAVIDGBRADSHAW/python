@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ data.title }}{% endblock %}
+
+{% block content %}
+
+
+    <section>
+        <h2>{{ data.heading }}</h2>
+        <p>{{ data.description }}</p>
+       <select name="items" id="items">
+        {% for item in data.new_items %}
+        <option value="{{ item }}">{{ item }}</option>
+        {% endfor %}
+    </select>  
+    <select name="items" id="items">
+      {% for item in data.new_items2 %}
+      <option value="{{ item }}">{{ item }}</option>
+      {% endfor %}
+  </select>  
+ <ul>
+  {% for item in data.new_items %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+
+    </section>
+{% endblock %}

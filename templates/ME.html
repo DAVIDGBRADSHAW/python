@@ -1,0 +1,24 @@
+<nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('task_list') }}">Tasks</a></li>
+      </ul>
+    </nav>
+    <h1>Task List</h1>
+    <form action="{{ url_for('task_list') }}" method="post">
+        <input type="text" name="task" placeholder="Enter a new task">
+        <button type="submit">Add Task</button>
+    </form>
+    <ul>
+        {% for idx, task in enumerate(tasks) %}
+        <li class="task-item" style="text-decoration: {% if task.complete %}line-through{% endif %};">
+            <span>{{ task.task }}</span>
+            {% if not task.complete %}
+            <span>
+              <a href="{{ url_for('complete_task', task_id=idx) }}">Mark Complete</a>
+            </span>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>

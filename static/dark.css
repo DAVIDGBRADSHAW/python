@@ -1,0 +1,99 @@
+body{
+    --accent-color: rgb(28, 120, 232);
+    --background-color: rgb(231, 27, 27);
+    --text-color: black;
+    --button-text-color: var(--background-color);
+    --transition-delay: 1s;
+
+    display: flex;
+    flex-direction:  column;
+    justify-content: center;
+    align-items: center ;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+
+    transition:  var(--transition-delay);
+    background-color: var(--background-color) ;
+    color: var(--text-color);
+}
+
+body.dark{
+    --accent-color: rgb(14, 14, 14);
+    --background-color: rgb(235, 227, 227);
+    --text-color: rgb(29, 217, 35);
+    --button-text-color: rgb(242, 140, 140);
+    --transition-delay: 1s ;
+    display: flex;
+    flex-direction:  column;
+    justify-content: center;
+    align-items: center ;
+    height: 100vh;
+    margin: 0;
+}
+
+.title-toggle-button{
+    background-color: var(--accent-color);
+    color: var(--button-text-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding:  .5em 1em;
+    border-radius: .3em;
+    border: none;
+    outline: none ;
+    transition: var(--transition-delay);
+}
+
+.theme-toggle-button .icon{
+    margin-right: .5em;
+
+.theme-toggle-button:hover,
+.title-toggle-button:focus{
+    transform: scale(1.1) ;
+}
+
+.sun-moon-container{
+    --rotation: 0;
+
+    position: absolute;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:  0;
+    height: 200vmin;
+    transform: rotate(var(--rotation));
+}
+
+
+.sun
+.moon{
+    position: absolute;
+    transition: opacity var(--transition-delay);
+    width: 30px;
+    height: 30px;
+    fill: var(--accent-color);
+}
+
+.sun{
+    top: 5%;
+    opacity: 1;
+}
+
+.dark .sun{
+    opacity: 0;
+
+}
+
+.moon { 
+    bottom: 5%;
+    opacity: 0;
+}
+
+.dark .moon{
+    opacity: 1;
+
+}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block title %}ISS LOCATION{% endblock %} {% block
+content %}
+
+<h1>Current Location of the ISS</h1>
+<div>
+  <p>Latitude: {{ iss_position.latitude }}</p>
+  <p>Longitude: {{ iss_position.longitude }}</p>
+</div>
+{% endblock %}

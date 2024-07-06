@@ -1,0 +1,35 @@
+<h5>To create a page in your Flask application that consumes an API for finding addresses, you'll need to integrate an external API that provides address lookup functionality. Here’s a step-by-step guide on how to achieve this:
+Step 1: Choose an Address Lookup API
+First, choose a suitable address lookup API. Some popular options include:
+    • Google Maps Geocoding API: Provides powerful geocoding (address lookup), reverse geocoding (coordinates to address), and place autocomplete features.
+    • OpenCage Geocoder: A straightforward and cost-effective geocoding service.
+    • Mapbox Geocoding API: Offers geocoding and reverse geocoding services with customization options.
+For this example, let's use the Google Maps Geocoding API.
+Step 2: Set Up Your Flask Application
+Ensure your Flask application is set up with the necessary dependencies. You might need to install requests library if it's not already installed (pip install requests).
+Step 3: Create a Form to Accept User Input
+Create a form in your template (address_lookup.html) where users can enter an address they want to search for.
+address_lookup.html
+</h5>
+</6>
+Step 4: Create a Route to Consume the API
+Create a route in app.py that handles the form submission and consumes the API to retrieve address coordinates.
+app.py
+from flask import Flask, render_template, request, redirect, url_for
+import requests
+
+app = Flask(__name__)
+
+# Replace with your Google Maps Geocoding API key
+API_KEY = 'your_google_maps_api_key'
+
+Step 5: Replace your_google_maps_api_key
+Replace 'your_google_maps_api_key' with your actual Google Maps Geocoding API key in app.py.
+Step 6: Run Your Flask Application
+Run your Flask application by navigating to the project directory and executing:
+python app.py
+Step 7: Access the Address Lookup Page
+Open a web browser and go to http://127.0.0.1:5000/address-lookup. You should see the address lookup form where you can enter an address and retrieve its coordinates.
+</h6>
+</body>
+</html>

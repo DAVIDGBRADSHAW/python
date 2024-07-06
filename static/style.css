@@ -1,0 +1,141 @@
+ body {
+  font-family: Arial, sans-serif;
+  background-color: #e3d6d6;
+  --accent-color: rgb(28, 120, 232);
+  --background-color: rgb(231, 27, 27);
+  --text-color: black;
+  --button-text-color: var(--background-color);
+  --transition-delay: 1s;
+
+  display: flex;
+  flex-direction:  column;
+  justify-content: center;
+  align-items: center ;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+
+  transition:  var(--transition-delay);
+  background-color: var(--background-color) ;
+  color: var(--text-color);
+
+}
+h1 {
+  color: #e90dd6;
+  text-align: center;
+  justify-content: center;
+  width: 800px;
+  height: 100px;
+  border: 5px dotted #cccccc;
+}
+p {
+  color: #666;
+  text-align: center;
+  width: 800px;
+  height: 10px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  background-color: #69cc0d;
+  margin: 5px 0;
+  padding: 10px;
+  border: 10px solid #020101;
+  width: 800px;
+  height: 50px;
+}
+
+body.dark{
+    --accent-color: rgb(14, 14, 14);
+    --background-color: rgb(235, 227, 227);
+    --text-color: rgb(29, 217, 35);
+    --button-text-color: rgb(242, 140, 140);
+    --transition-delay: 1s ;
+    display: flex;
+    flex-direction:  column;
+    justify-content: center;
+    align-items: center ;
+    height: 100vh;
+    margin: 0;
+}
+
+.title-toggle-button{
+    background-color: var(--accent-color);
+    color: var(--button-text-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding:  .5em 1em;
+    border-radius: .3em;
+    border: none;
+    outline: none ;
+    transition: var(--transition-delay);
+}
+
+.theme-toggle-button .icon{
+    margin-right: .5em;
+}
+.theme-toggle-button:hover,
+.title-toggle-button:focus{
+    transform: scale(1.1) ;
+}
+
+.sun-moon-container{
+    --rotation: 0;
+
+    position: absolute;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:  0;
+    height: 200vmin;
+    transform: rotate(var(--rotation));
+}
+
+
+.sun
+.moon{
+    position: absolute;
+    transition: opacity var(--transition-delay);
+    width: 30px;
+    height: 30px;
+    fill: var(--accent-color);
+}
+
+.sun{
+    top: 5%;
+    opacity: 1;
+}
+
+.dark .sun{
+    opacity: 0;
+
+}
+
+.moon { 
+    bottom: 5%;
+    opacity: 0;
+}
+
+.dark .moon{
+    opacity: 1;
+
+}
+
+.art {
+    border: 2px solid #ccc;
+
+    width: 800px;
+    height: 100px;
+}
+
+.dave {
+    border: 2px solid #7e0730;
+    width: 800px;
+    height: 100px;
+}
