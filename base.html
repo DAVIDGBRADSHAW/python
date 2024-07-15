@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{{ url_for('static', filename='/static/css/styles.css') }}">
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/styles.css') }}">
+    <script src={{ url_for('static', filename='/static/js/script.js') }}"></script>
+    <title>BASE</title>
+</head>
+<body>
+<h1> dave
+{% block content%}
+{% endblock%}
+{% block home%}
+{% endblock%}
+</h1>
+<a href="{{ url_for('static', filename='contact.html')}}">CONTACT LINK</a>
+<!--static is a file name but industry standard is to use static-->
+<a href="{{ url_for('static', filename='contacts.html')}}">CONTACT LINK</a>
+
+{% block homepage_content%}
+{% endblock%}
+{% block home%}
+{% endblock%}
+{% block homepage_content%}
+{% endblock%}
+{% block home%}
+{% endblock%}
+
+<h1>
+<!--<a href="{{url_for('static', filename='photos.html')}}">CONTACT LINK</a>  --->
+
+<!--<a href="{{url_for(photos)}}">CONTACT LINK</a>  --->
+<a href="{{url_for(photos)}}">CONTACT LINK</a>
+</h1>
+
+
+
+  <nav>
+    <h1>example</h1>
+    <ul>
+      <li class="navlink"><a href="{{url_for('index')}}">HOMER</a></li>
+			<li class="navlink"><a href="{{('task_list')}}">VIEW TASKS</a></li>
+        </ul>
+    </nav>
+<main>
+	{% block main %}
+	{% endblock%}
+</main>
+	
+{% extends 'base.html' %}
+
+{% block title %}{{ data.title }}{% endblock %}
+
+{% block content %}
+
+
+    <section>
+        <h2>{{ data.heading }}</h2>
+        <p>{{ data.description }}</p>
+       <select name="items" id="items">
+        {% for item in data.new_items %}
+        <option value="{{ item }}">{{ item }}</option>
+        {% endfor %}
+    </select>  
+    <select name="items" id="items">
+      {% for item in data.new_items2 %}
+      <option value="{{ item }}">{{ item }}</option>
+      {% endfor %}
+  </select>  
+ <ul>
+  {% for item in data.new_items %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+
+    </section>
+{% endblock %}
+
+
+
+
+<p>
+  <a href="{{}url_for('greet')}">GREETTYY</a>
+</p>
+
+</body>
+</html>

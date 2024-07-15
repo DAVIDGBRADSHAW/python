@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css"
+    <title>HOME --JINGA</title>
+</head>
+<body>
+<h1> sunny
+</h1>
+ <div class"python">
+{% extends "base.html"%}
+
+{% block content%}
+{% if username% }
+yo {{username}},  howdu
+{% else%}
+english here
+{%endif%}
+{% block home%}
+<p>this is new contact using Jinja</p>
+{% endblock%}
+ </div>
+<a href="contact.html">CONTACT LINK</a>
+<a href="photos.html">PHOTOS LINK</a>
+<a href="about.html">ABOUT</a>
+<br>
+<br>
+{% block content%}
+MORNING {{username}} how are you<br><br>
+this dave new contact using Jinja
+<br>
+<br>
+{% endblock%}
+</body>
+</html>
